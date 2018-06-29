@@ -21,7 +21,7 @@ public class Sequence {
             System.out.println("Result: " + result + " Total: " + total);
             efficiencyCount++;
         }
-        return result;
+        return total;
     }
     
     public static int computeRecursive(int n) {
