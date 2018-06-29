@@ -25,14 +25,14 @@ public class Sequence {
     }
     
     public static int computeRecursive(int n) {
+        efficiencyCount++;
         if(n == 0) {
             return 0;
         }
         else if(n == 1) {
             return 1;
         }
-        efficiencyCount++;
-        return n * 2 + computeRecursive(n - 1);
+        return computeRecursive(n - 2) + (computeRecursive(n - 1) * 2);
     }
     
     public static int getEfficiency() {
