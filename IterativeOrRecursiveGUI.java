@@ -133,57 +133,64 @@ public class IterativeOrRecursiveGUI {
         BoxLayout layout1 = new BoxLayout(Xpanel1, BoxLayout.Y_AXIS);
         Xpanel1.setLayout(layout1);
         
-        // The panel that is holding the Checking and Savings radio buttons
         JPanel panel2 = new JPanel();
-        BoxLayout layout4 = new BoxLayout(panel2, BoxLayout.Y_AXIS);
-        panel2.setLayout(layout4);
-        userInputLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
-        resultLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
-        efficiencyLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
-        panel2.add(userInputLabel);
-        panel2.add(resultLabel);
-        panel2.add(efficiencyLabel);
+        BoxLayout layout2 = new BoxLayout(panel2, BoxLayout.Y_AXIS);
+        panel2.setLayout(layout2);
+        panel2.add(iterative);
+        panel2.add(recursive);
+        Xpanel1.add(panel2);
         
-        // Adding the specific with withdraw button to a panel
-        // to add to the Xpanel1 panel
-        /*JPanel computePanel = new JPanel();
-        BoxLayout widthLayout = new BoxLayout(computePanel, BoxLayout.Y_AXIS);
-        computePanel.setLayout(widthLayout);
-        computePanel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
-        compute.setAlignmentX(Component.RIGHT_ALIGNMENT);
-        computePanel.add(compute);
-        Xpanel1.add(computePanel);*/
-
-        // The panel that is holding the Transfer To and Balance buttons
+        // The panel that is holding the Withdraw and Deposit buttons
         JPanel Xpanel2 = new JPanel();
-        BoxLayout layout2 = new BoxLayout(Xpanel2, BoxLayout.Y_AXIS);
-        Xpanel2.setLayout(layout2);
+        BoxLayout layout3 = new BoxLayout(Xpanel2, BoxLayout.X_AXIS);
+        Xpanel2.setLayout(layout3);
         
         // The panel that is holding the Checking and Savings radio buttons
         JPanel panel3 = new JPanel();
-        BoxLayout layout3 = new BoxLayout(panel3, BoxLayout.Y_AXIS);
-        panel3.setLayout(layout3);
-        panel3.add(iterative);
-        panel3.add(recursive);
-        panel3.add(userInput);
-        panel3.add(compute);
-        panel3.add(result);
-        panel3.add(efficiency);
-        
-        // The panel that is holding the userInput, result and efficiency text fields 
-        /*JPanel panel4 = new JPanel();
-        BoxLayout layout4 = new BoxLayout(panel4, BoxLayout.Y_AXIS);
+        BoxLayout layout4 = new BoxLayout(panel3, BoxLayout.X_AXIS);
+        panel3.setLayout(layout4);
+        userInputLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
         userInput.setAlignmentX(Component.RIGHT_ALIGNMENT);
+        panel3.add(userInputLabel);
+        panel3.add(userInput);
+        Xpanel2.add(panel3);
+        
+        // The panel that is holding the Checking and Savings radio buttons
+        JPanel panel4 = new JPanel();
+        BoxLayout layout5 = new BoxLayout(panel4, BoxLayout.Y_AXIS);
+        panel4.setLayout(layout5);
+        panel4.add(compute);
+
+        // The panel that is holding the Withdraw and Deposit buttons
+        JPanel Xpanel3 = new JPanel();
+        BoxLayout layout6 = new BoxLayout(Xpanel3, BoxLayout.X_AXIS);
+        Xpanel3.setLayout(layout6);
+        
+        // The panel that is holding the Checking and Savings radio buttons
+        JPanel panel5 = new JPanel();
+        BoxLayout layout7 = new BoxLayout(panel5, BoxLayout.X_AXIS);
+        panel4.setLayout(layout7);
+        resultLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
         result.setAlignmentX(Component.RIGHT_ALIGNMENT);
+        panel5.add(resultLabel);
+        panel5.add(result);
+        Xpanel3.add(panel5);
+        
+        // The panel that is holding the Checking and Savings radio buttons
+        JPanel panel6 = new JPanel();
+        BoxLayout layout8 = new BoxLayout(panel6, BoxLayout.X_AXIS);
+        panel6.setLayout(layout8);
+        efficiencyLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
         efficiency.setAlignmentX(Component.RIGHT_ALIGNMENT);
-        panel4.setLayout(layout4);
-        panel4.add(userInput);*/
+        panel6.add(efficiencyLabel);
+        panel6.add(efficiency);
+        Xpanel3.add(panel6);
         
         // Adding all the panels together for the finished result
-        panel.add(Xpanel2);
-        panel.add(panel3);
         panel.add(Xpanel1);
-        panel.add(panel2);
+        panel.add(Xpanel2);
+        panel.add(panel4);
+        panel.add(Xpanel3);
         frame.add(panel);
         
         // Exiting the program once "X" button on the window is pressed
