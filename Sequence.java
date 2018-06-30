@@ -15,7 +15,10 @@ public class Sequence {
         //Function: ((n-1)*2) + (n-2)
         int result = 0;
         int total = 0;
+        int firstTerm = 0;
+        int secondTerm = 1;
         efficiencyCount = 0;
+        
         if(n == 0) {
             return 0;
         }
@@ -23,8 +26,8 @@ public class Sequence {
             return 1;
         }
         for(int count = 2; count <= n; count++) {
-            total = (n - 2) + ((n - 1) * 2);
-            result = total + (n);
+            total = firstTerm + (secondTerm * 2);
+            result = total + (n - 2);
             System.out.println("Count: " + count + " Result: " + result + " Total: " + total);
             efficiencyCount++;
         }
