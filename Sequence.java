@@ -13,16 +13,22 @@ public class Sequence {
     
     public static int computeIterative(int n) {
         //Function: ((n-1)*2) + (n-2)
-        //int result = 0;
+        int result = 0;
         int total = 0;
         efficiencyCount = 0;
-        for(int count = 2; count <= n; count++) {    
-            //result = ;
-            total = (count - 2) + ((count - 1) * 2);
-            System.out.println("Count: " + count + " Result: " + " Total: " + total);
+        if(n == 0) {
+            return 0;
+        }
+        else if(n == 1) {
+            return 1;
+        }
+        for(int count = 2; count <= n; count++) {
+            total = (n - 2) + ((n - 1) * 2);
+            result = total + (n);
+            System.out.println("Count: " + count + " Result: " + result + " Total: " + total);
             efficiencyCount++;
         }
-        return total;
+        return result;
     }
     
     private static int computeRecursiveHelper(int n) {
