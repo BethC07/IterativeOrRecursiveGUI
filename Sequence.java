@@ -13,13 +13,13 @@ public class Sequence {
     
     public static int computeIterative(int n) {
         //Function: ((n-1)*2) + (n-2)
-        int result = 0;
+        //int result = 0;
         int total = 0;
         efficiencyCount = 0;
         for(int count = 2; count <= n; count++) {    
-            result = (count - 2);
-            total = result + ((count - 1) * 2);
-            System.out.println("Count: " + count + " Result: " + result + " Total: " + total);
+            //result = ;
+            total = (count - 2) + ((count - 1) * 2);
+            System.out.println("Count: " + count + " Result: " + " Total: " + total);
             efficiencyCount++;
         }
         return total;
