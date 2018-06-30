@@ -1,57 +1,61 @@
-/*
- * FileName: Week4GUI.java
- * Author: Beth Carmichael
- * Date: 06/14/2018
- * Purpose: 
- *
- *
- */
-package iterativeorrecursivegui;
+package sequence;
 
 public class Sequence {
-    static int efficiencyCount = 0;
-    
-    public static int computeIterative(int n) {
-        //Function: ((n-1)*2) + (n-2)
-        int result = 0;
-        int total = 0;
-        int firstTerm = 0;
-        int secondTerm = 1;
-        efficiencyCount = 0;
-        
-        if(n == 0) {
-            return 0;
-        }
-        else if(n == 1) {
-            return 1;
-        }
-        for(int count = 2; count <= n; count++) {
-            total = firstTerm + (secondTerm * 2);
-            result = total + (n - 2);
-            System.out.println("Count: " + count + " Result: " + result + " Total: " + total);
-            efficiencyCount++;
-        }
-        return result;
-    }
-    
-    private static int computeRecursiveHelper(int n) {
-        efficiencyCount++;
-        if(n == 0) {
-            return 0;
-        }
-        else if(n == 1) {
-            return 1;
-        }
-        return computeRecursiveHelper(n - 2) + (computeRecursiveHelper(n - 1) * 2);
-    }
-    
-    public static int computeRecursive(int n){
-        efficiencyCount = 0;
-        return computeRecursiveHelper(n);
-    }
-    
-    public static int getEfficiency() {
-        return efficiencyCount;
-    }
-    
+
+	private static int efficiencyNum;
+	
+	public static int computeIterative(int n) {
+		
+		if(n == 0) {
+			efficiencyNum = 1;
+			return 0;
+		}
+		else if(n == 1) {
+			efficiencyNum = 2;
+			return 1;
+		}
+		else {
+			
+			efficiencyNum = 3;
+			int a = 0;
+			int b = 1;
+			int nextTerm = 0;
+			
+			for(int x = 2; x <= n; x++) {
+				
+				nextTerm = (b * 2) + a;
+				a = b;
+				b = nextTerm;
+				efficiencyNum++;
+				
+			}
+			return nextTerm;
+		}
+	}
+	
+	public static int computeRecursive(int n) {
+		efficiencyNum = 0;
+		return Sequence.initRecursion(n);
+	}
+	
+	private static int initRecursion(int n) {
+		
+		efficiencyNum++;
+		
+		if(n == 0) {
+			return 0;
+		}
+		else if(n == 1) {
+			return 1;
+		}
+		else {
+			int retVal = (Sequence.initRecursion(n - 1) * 2) + (Sequence.initRecursion(n - 2));
+			return retVal;
+		}
+	}
+	
+	public static int getEfficiency() {
+		return efficiencyNum;
+	}
+	
 }
